@@ -7,7 +7,7 @@ import 'models/client.dart';
 import 'models/client_type.dart';
 import 'pages/clients_page.dart';
 
-void main() {
+void main({List<String> list = const [], Key providerKey = const Key("")}) {
   runApp(
       MultiProvider(providers: [
           ChangeNotifierProvider(
@@ -24,7 +24,7 @@ void main() {
               ClientType(name: 'Titanium', icon: Icons.credit_score),
               ClientType(name: 'Diamond', icon: Icons.diamond),
             ]))
-      ], child: const MyApp())
+      ], child: MyApp(key: providerKey,))
   );
 
 }
